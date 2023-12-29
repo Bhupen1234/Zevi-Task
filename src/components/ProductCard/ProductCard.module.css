@@ -1,0 +1,21 @@
+.cardWrapper>p{
+    font-size: 20px;
+    font-weight: 400;
+    }
+
+.cardWrapper>span{
+    font-size: 20px;
+    font-weight: 400; 
+}
+
+
+.cardImage{
+    position: relative;
+}
+
+.likeButton{
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    cursor: pointer;
+}
