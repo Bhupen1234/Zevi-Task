@@ -1,14 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import HomeBackground from "../../assets/HomeBackground.png"
 import styles from "./HomePage.module.css"
 import { ReactComponent as Search } from "../../assets/search.svg"
+import { fetchLatestTrendData, fetchPopularSuggestionData } from '../../FakerData/FakerData'
+import SuggestionBox from '../../components/SuggestionBox/SuggestionBox'
 const HomePage = () => {
    const [showSuggestionBox,setShowSuggestionBox] = useState(false)
-
+   const [ latestTrendData,setLatestTrendData] = useState([]);
+   const [popularSuggestionData,setPopularSuggestionData] = useState([])
    const onInputClick =()=>{
           setShowSuggestionBox((prevState)=>!prevState)
    }
 
+   useEffect(()=>{
+     setLatestTrendData(fetchLatestTrendData())
+     setPopularSuggestionData(fetchPopularSuggestionData());
+   },[])
+
+  
   return (
     <div className={styles.wrapper}>
       
@@ -24,9 +33,9 @@ const HomePage = () => {
         
         {
           showSuggestionBox && (
-            <div className={styles.suggestionBox}>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sint corporis aut, repellat voluptates tempore, molestias velit corrupti fugiat optio quasi esse accusamus consectetur ullam error minima aperiam voluptate? Unde.</p>
-            </div>
+         
+                 <SuggestionBox latestTrendData={latestTrendData} popularSuggestionData={popularSuggestionData}/>
+           
           )
         }
 

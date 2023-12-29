@@ -27,8 +27,8 @@ background-position: center;
 .searchBar{
     display: flex;
   align-items: center;
-    position: absolute;
-    top: 6rem;
+ 
+    /* top: 6rem; */
    
   padding: 8px;
   border-radius: 4px;

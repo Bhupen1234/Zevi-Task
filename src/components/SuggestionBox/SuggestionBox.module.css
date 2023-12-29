@@ -1,0 +1,58 @@
+.wrapper{
+    background-color: white;
+    
+
+  
+}
+
+.latestTrendWrapper{
+    padding: 30px;
+}
+
+
+.latestTrend{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.popularSuggestionWrapper{
+    padding: 30px;
+}
+
+
+.latestTrendCards>img{
+   height: 20%;
+   width: 150px;
+   border-radius: 20px;
+   
+  
+ 
+}
+
+.latestTrendCards{
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.latestTrendCards:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.popularSuggestion>h4{
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.popularSuggestion>h4:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+
+
