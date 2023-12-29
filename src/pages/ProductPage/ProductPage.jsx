@@ -4,6 +4,7 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import { ReactComponent as Search } from "../../assets/search.svg";
 import { Grid, Stack, TextField } from "@mui/material";
 import { fetchProducts } from "../../FakerData/FakerData";
+import Filter from "../../components/Filter/Filter";
 const ProductPage = () => {
 
   const [productData ,setProductData]= useState([]);
@@ -15,7 +16,9 @@ setProductData(fetchProducts());
       <Grid container>
         <Grid item  sm={3}
           sx={{ padding: "22px" }}>
-            Filters
+           {
+            <Filter/>
+           }
         </Grid>
 
         <Grid item  sm={9} sx={{ padding: "22px" }}>
