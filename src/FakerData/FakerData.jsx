@@ -5,7 +5,7 @@ export const fetchLatestTrendData =()=>{
 
     for(let i=1;i<=5;i++){
         latestTrends.push({
-            productImg: faker.image.people(300,400,true),
+            productImg:  faker.image.urlLoremFlickr({ category: 'clothes',height: 400,  width: 300, }),
             productName : faker.commerce.productName()
         })
     }
@@ -32,12 +32,16 @@ export const fetchProducts = () => {
     const products=[];
   
     for (let i = 0; i <= 30; i++) {
-      const productImg = faker.image.url({
-        height: 400,
-        width: 300,
-      });
+      // const productImg = faker.image.url({
+      //   height: 400,
+      //   width: 300,
+      // });
+
+      const productImg = faker.image.urlLoremFlickr({ category: 'clothes',height: 400,  width: 300, })
+
+     
       const productId = i;
-      const productName = faker.commerce.productName();
+      const productName = faker.commerce.productName({category:"clothes"});
       const productRating = faker.number.int({ min: 1, max: 5 });
       const productOrgPrice = Number(
         faker.commerce.price({ min: 300, max: 5000 })
