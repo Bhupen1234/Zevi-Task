@@ -17,6 +17,9 @@ const ProductCard = ({data}) => {
         <div className={styles.likeButton}>
             {isLiked ? <Liked onClick={()=>setIsLiked((prevState)=>!prevState)}/> : <NotLiked onClick={()=>setIsLiked((prevState)=>!prevState)}/> }
         </div>
+        <div className={styles.viewProduct}>
+            <h3>View Product</h3>
+        </div>
       </div>
       <p >{data.productName}</p>
       

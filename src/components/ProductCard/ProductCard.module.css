@@ -11,6 +11,7 @@
 
 .cardImage{
     position: relative;
+    width: 300px;
 }
 
 .likeButton{
@@ -20,5 +21,50 @@
     cursor: pointer;
 }
 
+.cardWrapper{
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.cardWrapper:hover{
+    transform: scale(1);
+   
+}
+
+.cardImage:hover{
+
+    
+
+    .viewProduct{
+   
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%);
+        background-color:rgba(109, 132, 255, 0.71);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 47px;
+       
+        
+    
+        
+    
+    }
+}
 
 
+
+
+
+
+
+
+.viewProduct>h3{
+    color: white;
+    font-size: 20px;
+font-style: normal;
+font-weight: 500;
+}
