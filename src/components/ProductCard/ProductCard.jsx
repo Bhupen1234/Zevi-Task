@@ -4,7 +4,7 @@ import Rating from '@mui/material/Rating';
 import { faker } from "@faker-js/faker";
 import {ReactComponent as Liked } from "../../assets/RedHeart.svg"
 import {ReactComponent as NotLiked }  from "../../assets/WhiteHeart.svg"
-import { useNavigate } from 'react-router-dom';
+
 const ProductCard = ({data}) => {
 
     const [isLiked ,setIsLiked ]= useState(false)
@@ -27,7 +27,7 @@ const ProductCard = ({data}) => {
     
       <span style={{color:" #6D84FF",fontWeight:"600"}}> &nbsp;Rs. {data.productDisPrice}</span>
       <br />
-      <Rating name="read-only" value={data.productRating} readOnly />
+      <Rating name="read-only" value={data.productRating} readOnly /> <span style={{color:"rgba(0, 0, 0, 0.80)" ,fontSize:"14px" ,fontWeight:"400"}}>({data.productsReviews})</span>
    
       
     </div>

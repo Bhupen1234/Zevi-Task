@@ -6,6 +6,7 @@ import { Box, Grid, Stack, TextField,Typography } from "@mui/material";
 import { fetchProducts } from "../../FakerData/FakerData";
 import Filter from "../../components/Filter/Filter";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import {ReactComponent as Logo} from "../../assets/Zevi-Logo.svg"
 import {  SentimentDissatisfied } from "@mui/icons-material";
 
 import {
@@ -16,7 +17,7 @@ const ProductPage = () => {
 
   const [productData ,setProductData]= useState([]);
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [searchKey, setSearchKey] = useState("");
+
   const [filteredProducts, setFilteredProducts] = useState([]);
 
 
@@ -70,6 +71,7 @@ setFilteredProducts(fetchProducts())
           >
             <Filter filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts} productData={productData}/>
           </Drawer>
+
           </>
            }
         </Grid>
@@ -88,7 +90,7 @@ setFilteredProducts(fetchProducts())
               placeholder="Search for Products"
               name="search"
               fullWidth
-              
+              sx={{marginRight: { sm: "50px", md: "100px" } }}
             />
 
 <Box
@@ -101,7 +103,8 @@ setFilteredProducts(fetchProducts())
                 onClick={() => toggleDrawer(true)}
               />
             </Box>
-            
+
+         
           </Stack>
           {
             filteredProducts.length!==0 ? (
