@@ -4,6 +4,7 @@ import styles from "./HomePage.module.css"
 import { ReactComponent as Search } from "../../assets/search.svg"
 import { fetchLatestTrendData, fetchPopularSuggestionData } from '../../FakerData/FakerData'
 import SuggestionBox from '../../components/SuggestionBox/SuggestionBox'
+import {ReactComponent as Logo} from "../../assets/Zevi-Logo.svg"
 const HomePage = () => {
    const [showSuggestionBox,setShowSuggestionBox] = useState(false)
    const [ latestTrendData,setLatestTrendData] = useState([]);
@@ -20,6 +21,9 @@ const HomePage = () => {
   
   return (
     <div className={styles.wrapper}>
+         <div className={styles.Logo}>
+            <Logo/>
+         </div>
       
         <form className={styles.searchBar}>
             <input type="text" placeholder='Search' onClick={()=>onInputClick()}/>
@@ -33,9 +37,10 @@ const HomePage = () => {
         
         {
           showSuggestionBox && (
-         
+            <div>
                  <SuggestionBox latestTrendData={latestTrendData} popularSuggestionData={popularSuggestionData}/>
-           
+            </div>
+            
           )
         }
 

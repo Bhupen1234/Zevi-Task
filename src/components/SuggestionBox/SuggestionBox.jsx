@@ -1,6 +1,9 @@
 import React from 'react'
 import styles from "./SuggestionBox.module.css"
+import { useNavigate } from 'react-router-dom'
 const SuggestionBox = ({popularSuggestionData,latestTrendData}) => {
+
+    const navigate = useNavigate()
   return (
     <div className={styles.wrapper}>
         <div className={styles.latestTrendWrapper}>
@@ -9,7 +12,7 @@ const SuggestionBox = ({popularSuggestionData,latestTrendData}) => {
                 {
                     latestTrendData.map((data)=>{
                         return(
-                            <div className={styles.latestTrendCards}>
+                            <div className={styles.latestTrendCards}  onClick={()=>navigate("/product")}>
                                 <img src={data.productImg} alt={data.productName} />
                                  <p>{data.productName}</p>
                             </div>
@@ -28,7 +31,7 @@ const SuggestionBox = ({popularSuggestionData,latestTrendData}) => {
             {
                 popularSuggestionData.map((data)=>{
                     return(
-                        <h4 style={{marginBottom:"12px"}} >{data.productName}</h4>
+                        <h4 style={{marginBottom:"12px"}} className={styles.productName} onClick={()=>navigate("/product")}>{data.productName}</h4>
                     )
                 })
             }

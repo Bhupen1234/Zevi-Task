@@ -4,12 +4,14 @@ import Rating from '@mui/material/Rating';
 import { faker } from "@faker-js/faker";
 import {ReactComponent as Liked } from "../../assets/RedHeart.svg"
 import {ReactComponent as NotLiked }  from "../../assets/WhiteHeart.svg"
+import { useNavigate } from 'react-router-dom';
 const ProductCard = ({data}) => {
 
     const [isLiked ,setIsLiked ]= useState(false)
+    
    
   return (
-    <div className={styles.cardWrapper}>
+    <div className={styles.cardWrapper}  >
       <div className={styles.cardImage}>
         <img src={data.productImg} alt={data.productName}/>
         <div className={styles.likeButton}>
